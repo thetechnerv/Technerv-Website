@@ -1,0 +1,397 @@
+.work-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 8px 14px 8px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--glass-shadow);
+}
+.work-note .pulse-dot {
+  width: 6px;
+  height: 6px;
+}
+
+/* mobile list replaces the wheel */
+.work-mobile {
+  display: none;
+}
+@media (max-width: 899px) {
+  .work-mobile {
+    display: grid;
+    gap: 22px;
+    padding-bottom: 40px;
+  }
+}
+.wm-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.wm-media {
+  aspect-ratio: 16 / 11;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--line);
+}
+.wm-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 12px 4px 0;
+}
+.wm-meta .mono {
+  font-size: 0.7rem;
+  color: var(--teal-600);
+}
+.wm-meta b {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+.wm-meta .muted {
+  margin-left: auto;
+  font-size: 0.85rem;
+}
+
+/* Case studies */
+.cs-list {
+  padding-top: clamp(40px, 6vw, 80px);
+}
+.cs {
+  padding-block: clamp(56px, 6vw, 96px);
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 90px;
+}
+.cs-head {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+.cs-index {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--teal-600);
+  margin-bottom: 14px;
+}
+.cs-headline {
+  margin-top: 14px;
+  font-size: var(--fs-lead);
+  line-height: 1.4;
+  color: var(--ink-2);
+  max-width: 34ch;
+  letter-spacing: -0.012em;
+}
+.cs-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+  margin: 0;
+}
+.cs-facts dt {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-4);
+  margin-bottom: 4px;
+}
+.cs-facts dd {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.work-hero .page-hero {
+  padding-bottom: 0;
+}
+.work-hero + .ww {
+  padding-top: 64px;
+}
+.cs-story p,
+.work-note,
+.cs-headline {
+  text-wrap: pretty;
+}
+.cs-cover {
+  aspect-ratio: 16 / 6.6;
+  max-height: 520px;
+  width: 100%;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: 0 60px 100px -60px rgba(6, 59, 55, 0.5), 0 0 0 1px var(--line);
+}
+.cs-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 5vw, 80px);
+  margin-top: clamp(40px, 5vw, 72px);
+}
+.cs-label {
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-700);
+  margin-bottom: 12px;
+}
+.cs-story p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 48ch;
+}
+.cs-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.cs-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 18px 22px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--line);
+}
+.cs-metric b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.4rem + 1.8vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background: var(--grad-signal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 4px;
+}
+.cs-metric span {
+  display: block;
+  margin-top: 0;
+  font-size: 0.92rem;
+  color: var(--ink-3);
+}
+.cs-disclaimer {
+  margin-top: 12px;
+  font-size: 0.68rem;
+  color: var(--ink-4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.cs-media {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 14px;
+  margin-top: clamp(32px, 4vw, 52px);
+}
+.cs-shots {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+}
+.cs-shot {
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  border-radius: var(--r-md);
+  min-height: 150px;
+  background: repeating-linear-gradient(135deg, rgba(10, 20, 22, 0.025) 0 10px, transparent 10px 20px), var(--surface);
+  box-shadow: inset 0 0 0 1.5px var(--line-2);
+  border: 1.5px dashed var(--paper-3);
+}
+.cs-shot-icon {
+  width: fit-content;
+  padding: 8px;
+  border-radius: 12px;
+  background: var(--paper);
+}
+.cs-shot figcaption b {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.cs-shot figcaption span {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+}
+
+/* Floating contents bar */
+.cs-toc {
+  position: fixed;
+  left: 50%;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 80;
+  display: flex;
+  gap: 2px;
+  max-width: calc(100vw - 24px);
+  padding: 5px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-radius: 999px;
+  background: rgba(250, 252, 251, 0.88);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow), 0 20px 40px -20px rgba(6, 59, 55, 0.35);
+  transform: translate(-50%, 140%);
+  opacity: 0;
+  transition: transform 700ms var(--ease-out), opacity 400ms;
+}
+.cs-toc.is-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+.cs-toc button {
+  flex: none;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ink-3);
+  transition: background var(--dur-2), color var(--dur-2);
+}
+.cs-toc button:hover {
+  color: var(--ink);
+}
+.cs-toc button.is-active {
+  color: #fff;
+  background: var(--ink);
+}
+
+/* Testimonials */
+.t-head {
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.t-head .h2 {
+  margin-top: 20px;
+}
+.t-note {
+  margin-top: 14px;
+  font-size: 0.9rem;
+}
+.t-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  align-items: stretch;
+  gap: 14px;
+}
+.t-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 22px;
+  margin: 0;
+  padding: 30px 28px 26px;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--line);
+  overflow: hidden;
+}
+.t-card.is-featured {
+  background: var(--teal-950);
+  color: #fff;
+}
+.t-mark {
+  width: 30px;
+  height: 22px;
+  color: var(--teal-400);
+}
+.t-card figcaption {
+  margin-top: auto;
+}
+.t-card blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.t-card.is-featured blockquote {
+  font-size: clamp(1.3rem, 1.1rem + 0.6vw, 1.6rem);
+}
+.t-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+}
+.t-card figcaption b {
+  display: block;
+  font-weight: 600;
+}
+.t-card figcaption span span {
+  color: var(--ink-3);
+}
+.t-card.is-featured figcaption span span {
+  color: rgba(255, 255, 255, 0.6);
+}
+.t-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: conic-gradient(from 210deg, var(--teal-300), var(--iris), var(--apricot), var(--teal-300));
+}
+
+@media (max-width: 900px) {
+  .cs-head,
+  .cs-story,
+  .cs-media {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cs {
+    padding-top: 72px;
+  }
+  .cs-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cs-head {
+    padding-top: 12px;
+  }
+  .cs-toc {
+    -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, #000 85%, transparent);
+  }
+  .vs-play {
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+  }
+  .cs-cover {
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
+  }
+  .cs-metrics {
+    grid-template-columns: 1fr;
+  }
+  .cs-shots {
+    grid-template-rows: none;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .t-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-metric {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cs-facts > div:nth-child(1),
+  .cs-facts > div:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+}

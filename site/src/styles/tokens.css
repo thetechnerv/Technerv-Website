@@ -1,0 +1,85 @@
+/* ───────────────────────────────────────────────
+   Tech Nerv design tokens
+   Concept: the nervous system of a business.
+   Lagoon teals carry the signal; apricot is the impulse;
+   iris tints the gradients. Paper is cool, never pure white.
+   ─────────────────────────────────────────────── */
+:root {
+  /* Paper & ink */
+  --paper: #f4f6f5;
+  --paper-2: #eaefed;
+  --paper-3: #dfe6e3;
+  --surface: #ffffff;
+  --ink: #0a1416;
+  --ink-2: #33434a;
+  --ink-3: #566669;
+  --ink-4: #869496;
+  --line: rgba(10, 20, 22, 0.08);
+  --line-2: rgba(10, 20, 22, 0.14);
+
+  /* Lagoon — the signal */
+  --teal-950: #03211f;
+  --teal-900: #063b37;
+  --teal-800: #08524d;
+  --teal-700: #0a6e67;
+  --teal-600: #0c8a80;
+  --teal-500: #10a396;
+  --teal-400: #2ec4b2;
+  --teal-300: #6fe3d2;
+  --teal-200: #a8f0e4;
+  --teal-100: #d5f6f0;
+  --teal-50: #edfbf8;
+
+  /* Impulse & tint */
+  --apricot: #ff8e5e;
+  --apricot-deep: #e9663a;
+  --apricot-soft: #ffe3d6;
+  --iris: #7c8cff;
+  --iris-soft: #e2e5ff;
+
+  /* Gradients */
+  --grad-signal: linear-gradient(100deg, var(--teal-700) 0%, var(--teal-400) 45%, var(--iris) 100%);
+  --grad-aurora: radial-gradient(60% 80% at 20% 20%, rgba(111, 227, 210, 0.55), transparent 60%),
+    radial-gradient(50% 70% at 85% 30%, rgba(124, 140, 255, 0.35), transparent 60%),
+    radial-gradient(40% 60% at 60% 95%, rgba(255, 142, 94, 0.25), transparent 60%);
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.58);
+  --glass-bg-strong: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-blur: saturate(180%) blur(22px);
+  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 0 0 0.5px rgba(10, 20, 22, 0.08),
+    0 12px 32px -12px rgba(6, 59, 55, 0.18), 0 2px 6px -2px rgba(6, 59, 55, 0.08);
+
+  /* Type */
+  --font-display: "Inter Tight", "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-text: "Inter", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --fs-hero: clamp(2.9rem, 1.2rem + 5.4vw, 6rem);
+  --fs-h1: clamp(2.5rem, 1.4rem + 4.2vw, 5.4rem);
+  --fs-h2: clamp(2rem, 1.25rem + 2.9vw, 4rem);
+  --fs-h3: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  --fs-lead: clamp(1.1rem, 1rem + 0.45vw, 1.42rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+  --fs-micro: 0.72rem;
+
+  /* Space & shape */
+  --gutter: clamp(20px, 4vw, 56px);
+  --max: 1320px;
+  --section-y: clamp(96px, 14vw, 200px);
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 40px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-1: 180ms;
+  --dur-2: 420ms;
+  --dur-3: 900ms;
+}

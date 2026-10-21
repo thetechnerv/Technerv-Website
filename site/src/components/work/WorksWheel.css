@@ -1,0 +1,113 @@
+.ww {
+  --r: 240px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.8fr) 1.4fr;
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+  padding: 88px var(--gutter) 32px;
+  max-width: calc(var(--max) + var(--gutter) * 2);
+  margin: 0 auto;
+}
+
+.ww-left {
+  position: relative;
+  height: 100%;
+  max-height: 640px;
+  perspective: 1600px;
+  -webkit-mask-image: linear-gradient(transparent, #000 25%, #000 75%, transparent);
+  mask-image: linear-gradient(transparent, #000 25%, #000 75%, transparent);
+}
+.ww-drum {
+  position: absolute;
+  inset: 0 0 0 28px;
+  transform-style: preserve-3d;
+}
+.ww-name {
+  --lit: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  margin-top: -0.6em;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1rem + 2.6vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  color: color-mix(in oklab, var(--ink) calc((0.35 + var(--lit) * 0.65) * 100%), var(--ink-4));
+  backface-visibility: hidden;
+  transform-origin: 50% 50% calc(var(--r) * -1);
+  will-change: transform, opacity;
+}
+.ww-name .mono {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--teal-600);
+  opacity: calc(0.6 + var(--lit) * 0.4);
+  transform: translateY(-0.4em);
+}
+.ww-caret {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 2px;
+  background: var(--apricot);
+  box-shadow: 0 0 0 5px rgba(255, 142, 94, 0.18);
+}
+
+.ww-right {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.ww-stage {
+  position: relative;
+  aspect-ratio: 16 / 10.5;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--paper-2);
+  box-shadow: 0 50px 90px -50px rgba(6, 59, 55, 0.55), 0 0 0 1px var(--line);
+}
+.ww-cover {
+  position: absolute;
+  inset: 0;
+  will-change: opacity, transform;
+}
+.ww-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  animation: info-in 700ms var(--ease-out);
+}
+.ww-info p {
+  margin-top: 6px;
+  color: var(--ink-2);
+  max-width: 48ch;
+}
+.ww-sector {
+  font-size: 0.72rem;
+  color: var(--teal-700);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+@keyframes info-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (max-width: 899px) {
+  .ww {
+    display: none;
+  }
+}

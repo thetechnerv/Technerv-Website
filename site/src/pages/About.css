@@ -1,0 +1,296 @@
+.ab-intro.section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ab-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+  padding-top: clamp(40px, 5vw, 72px);
+  background: linear-gradient(var(--line), var(--line)) no-repeat center top / calc(100% - 2 * var(--gutter)) 1px;
+}
+.ab-intro-card {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 440px;
+  margin-left: auto;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--teal-950);
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+.ab-intro-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(60% 60% at 30% 25%, rgba(46, 196, 178, 0.35), transparent 70%),
+    radial-gradient(50% 50% at 80% 80%, rgba(124, 140, 255, 0.3), transparent 70%);
+}
+/* 8×8 pixel grid that pulses outward like a signal */
+.ab-grid-art {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  width: 64%;
+}
+.ab-grid-art span {
+  aspect-ratio: 1;
+  border-radius: 24%;
+  background: rgba(111, 227, 210, 0.16);
+  animation: grid-sweep 4.4s var(--ease-in-out) infinite;
+}
+.ab-grid-art span.is-mark {
+  background: linear-gradient(140deg, var(--teal-200), var(--teal-400));
+  box-shadow: 0 0 18px -4px rgba(111, 227, 210, 0.7);
+  animation-name: grid-mark;
+}
+.ab-grid-art span.is-impulse {
+  background: var(--apricot);
+  box-shadow: 0 0 18px -2px rgba(255, 142, 94, 0.8);
+  animation-name: grid-mark;
+}
+@keyframes grid-sweep {
+  0%,
+  100% {
+    background-color: rgba(111, 227, 210, 0.1);
+    transform: scale(0.84);
+  }
+  40% {
+    background-color: rgba(111, 227, 210, 0.42);
+    transform: scale(1);
+  }
+}
+@keyframes grid-mark {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  40% {
+    transform: scale(0.88);
+    filter: brightness(1.3);
+  }
+}
+.ab-intro-copy .h2 {
+  margin-top: 20px;
+}
+.ab-text {
+  margin-top: 18px;
+  color: var(--ink-3);
+  max-width: 46ch;
+}
+
+.ab-principles .h2,
+.ab-process .h2,
+.ab-stack .h2 {
+  margin-top: 20px;
+}
+.ab-p-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.ab-p {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 360px;
+  padding: 28px 26px 150px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 0 0 1px var(--line);
+  transition: transform 600ms var(--ease-out), box-shadow 600ms var(--ease-out);
+}
+/* soft tinted cards, each with a large glass object bleeding off the corner */
+.ab-p.tone-0 {
+  background: linear-gradient(160deg, #fff 10%, var(--teal-100));
+}
+.ab-p.tone-1 {
+  background: linear-gradient(160deg, #fff 10%, var(--iris-soft));
+}
+.ab-p.tone-2 {
+  background: linear-gradient(160deg, #fff 10%, var(--apricot-soft));
+}
+.ab-p.tone-3 {
+  background: linear-gradient(160deg, #fff 10%, #d9f3e6);
+}
+.ab-p:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px var(--line), 0 30px 50px -30px rgba(6, 59, 55, 0.3);
+}
+.ab-p .glass-icon {
+  position: absolute;
+  z-index: -1;
+  right: -34px;
+  bottom: -40px;
+  width: 200px;
+  height: 200px;
+  transform: rotate(-8deg);
+}
+.ab-p:hover .glass-icon {
+  transform: rotate(-2deg) translateY(-8px) scale(1.04);
+}
+.ab-p-num {
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  margin-bottom: 18px;
+}
+.ab-p p {
+  color: var(--ink-2);
+  font-size: 0.96rem;
+  max-width: 30ch;
+}
+
+.ab-focus {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+}
+.ab-focus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 48px;
+}
+.ab-focus-grid .h2 {
+  margin: 20px 0 18px;
+}
+.ab-focus-side {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+.ab-focus-side .muted {
+  max-width: 32ch;
+}
+.ab-focus-item {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 24px;
+  padding: 26px 0;
+  border-top: 1px solid var(--line-2);
+}
+.ab-focus-item:last-child {
+  border-bottom: 1px solid var(--line-2);
+}
+.ab-focus-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.ab-focus-item p {
+  color: var(--ink-3);
+}
+
+.ab-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: clamp(40px, 5vw, 64px);
+  counter-reset: s;
+}
+.ab-step {
+  padding: 24px 22px 26px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--line), inset 0 2px 0 var(--teal-300);
+}
+.ab-step .mono {
+  font-size: 0.72rem;
+  color: var(--teal-700);
+}
+.ab-step h3 {
+  margin: 14px 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.ab-step p {
+  font-size: 0.95rem;
+  color: var(--ink-3);
+}
+
+.ab-stack-groups {
+  margin-top: 40px;
+  border-top: 1px solid var(--line-2);
+}
+.ab-stack-row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-2);
+}
+.ab-stack-row > .mono {
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-700);
+}
+.ab-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ab-stack-list span {
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-size: 1.12rem;
+  font-weight: 500;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--line);
+  transition: transform 400ms var(--ease-spring), box-shadow 400ms;
+}
+.ab-stack-list span:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 1px var(--teal-300), 0 10px 20px -10px rgba(6, 59, 55, 0.3);
+}
+
+@media (max-width: 1000px) {
+  .ab-p-grid,
+  .ab-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 760px) {
+  .ab-intro-grid,
+  .ab-focus-grid,
+  .ab-focus-item,
+  .ab-stack-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ab-focus-side {
+    position: static;
+  }
+  .ab-intro-card {
+    margin: 0;
+    max-width: 100%;
+  }
+  .ab-focus-item {
+    gap: 8px;
+  }
+  .ab-p-grid,
+  .ab-steps {
+    grid-template-columns: 1fr;
+  }
+  .ab-p {
+    min-height: 300px;
+  }
+}
+
+.ab-intro-text {
+  padding-top: 42px;
+}
+@media (max-width: 760px) {
+  .ab-intro-text {
+    padding-top: 0;
+  }
+}

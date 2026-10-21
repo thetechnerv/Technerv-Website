@@ -1,0 +1,33 @@
+.manifesto .eyebrow {
+  margin-bottom: 36px;
+}
+.manifesto-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 1rem + 3.4vw, 4.1rem);
+  font-weight: 550;
+  line-height: 1.12;
+  letter-spacing: -0.038em;
+  max-width: 27ch;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.manifesto-text .mw {
+  display: inline;
+}
+.manifesto-text .mw.is-accent {
+  color: var(--teal-700);
+}
+.manifesto-text .mi {
+  display: inline-flex;
+  vertical-align: -0.18em;
+  margin: 0 0.08em 0 -0.04em;
+}
+.manifesto-text .mi .glass-icon {
+  width: 1.05em;
+  height: 1.05em;
+}
+
+.manifesto.section {
+  padding-top: clamp(72px, 9vw, 140px);
+  padding-bottom: clamp(48px, 7vw, 100px);
+}

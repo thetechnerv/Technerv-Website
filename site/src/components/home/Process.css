@@ -1,0 +1,128 @@
+.process.section {
+  padding-top: clamp(64px, 9vw, 160px);
+  padding-bottom: clamp(56px, 6vw, 84px);
+}
+.pr-head {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px 64px;
+  align-items: end;
+  margin-bottom: clamp(56px, 7vw, 88px);
+}
+.pr-lead {
+  max-width: 30rem;
+}
+.pr-head .h2 {
+  margin-top: 20px;
+}
+
+.pr-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.pr-rail {
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  right: calc(25% - 18px);
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--paper-3) 0 4px, transparent 4px 8px);
+}
+.pr-rail-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--grad-signal);
+  transform-origin: left;
+}
+
+.pr-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 44px;
+  padding-right: 18px;
+}
+.pr-node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  background: var(--paper);
+  border: 2px solid var(--paper-3);
+  transition: background 500ms, border-color 500ms, box-shadow 600ms var(--ease-out);
+}
+.pr-step.is-lit .pr-node {
+  background: var(--teal-500);
+  border-color: var(--teal-300);
+  box-shadow: 0 0 0 6px rgba(16, 163, 150, 0.14);
+}
+.pr-step:last-child.is-lit .pr-node {
+  background: var(--apricot);
+  border-color: var(--apricot-soft);
+  box-shadow: 0 0 0 6px rgba(255, 142, 94, 0.16);
+}
+.pr-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.pr-num {
+  font-size: 0.8rem;
+  color: var(--teal-700);
+}
+.pr-step .h3 {
+  margin-bottom: 12px;
+  font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.3rem);
+}
+.pr-step p {
+  color: var(--ink-3);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  max-width: 30ch;
+}
+.pr-time {
+  margin-top: 22px;
+  width: fit-content;
+  padding: 5px 11px;
+  font-size: 0.78rem;
+  border-radius: 999px;
+  color: var(--teal-800);
+  background: var(--teal-50);
+  box-shadow: inset 0 0 0 1px var(--teal-100);
+}
+
+@media (max-width: 900px) {
+  .pr-head {
+    grid-template-columns: 1fr;
+  }
+  .pr-steps {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-left: 36px;
+  }
+  .pr-rail {
+    top: 0;
+    bottom: 0;
+    left: 7px;
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: repeating-linear-gradient(180deg, var(--paper-3) 0 4px, transparent 4px 8px);
+  }
+  .pr-rail-fill {
+    transform-origin: top;
+    background: linear-gradient(180deg, var(--teal-700), var(--teal-400), var(--iris));
+  }
+  .pr-step {
+    padding-top: 0;
+  }
+  .pr-node {
+    left: -36px;
+    top: 2px;
+  }
+}

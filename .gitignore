@@ -1,0 +1,16 @@
+# dependencies & builds
+node_modules/
+dist/
+*.tsbuildinfo
+
+# design-review screenshots (large, regenerable with site/scripts/shot.mjs)
+site/shots/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# local env
+.env
+.env.*

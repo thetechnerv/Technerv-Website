@@ -1,0 +1,224 @@
+.contact {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: clamp(130px, 16vh, 180px) 0 clamp(80px, 10vw, 140px);
+  overflow: hidden;
+  isolation: isolate;
+}
+.ct-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(40% 50% at 80% 30%, rgba(168, 240, 228, 0.65), transparent 70%),
+    radial-gradient(30% 40% at 95% 80%, rgba(226, 229, 255, 0.9), transparent 70%),
+    radial-gradient(30% 40% at 60% 100%, rgba(255, 227, 214, 0.7), transparent 70%);
+}
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.ct-badge {
+  justify-self: start;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 34px;
+  padding: 0 14px 0 12px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 550;
+  color: var(--teal-800);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--glass-shadow);
+}
+.ct-title {
+  margin: 24px 0 24px;
+  font-size: clamp(2.8rem, 1.4rem + 4.6vw, 5.6rem);
+}
+.ct-intro .lead {
+  max-width: 30rem;
+}
+.ct-points {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ct-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--ink-2);
+}
+.ct-points .pixel-icon {
+  flex: none;
+  margin-top: 3px;
+}
+.ct-next-line {
+  margin-top: -6px;
+  text-align: center;
+  font-size: 0.86rem;
+  color: var(--ink-3);
+}
+
+/* Card */
+.ct-card {
+  padding: clamp(24px, 3vw, 40px);
+  border-radius: var(--r-xl);
+  background: rgba(255, 255, 255, 0.74);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow), 0 50px 100px -50px rgba(6, 59, 55, 0.35);
+}
+.ct-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.ct-form-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+.ct-field > span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.88rem;
+  font-weight: 550;
+  color: var(--ink-2);
+}
+.ct-field em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--ink-3);
+  margin-left: 4px;
+}
+.ct-field input,
+.ct-field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 14px;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--line-2);
+  transition: box-shadow 300ms;
+  resize: none;
+}
+.ct-field input::placeholder,
+.ct-field textarea::placeholder {
+  color: var(--ink-4);
+}
+.ct-field input:focus,
+.ct-field textarea:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 1.5px var(--teal-500), 0 0 0 4px rgba(16, 163, 150, 0.14);
+}
+.ct-send {
+  width: 100%;
+  margin-top: 6px;
+  --h: 56px;
+}
+.ct-error {
+  font-size: 0.86rem;
+  color: var(--apricot-deep);
+}
+.ct-or {
+  position: relative;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--ink-4);
+}
+.ct-or::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--line-2);
+}
+.ct-or span {
+  position: relative;
+  padding: 0 12px;
+  background: #fbfcfc;
+  border-radius: 6px;
+}
+.ct-alt {
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--ink-3);
+}
+.ct-mail {
+  font-weight: 550;
+  color: var(--teal-800);
+  border-bottom: 1px solid var(--teal-200);
+  transition: border-color var(--dur-2);
+}
+.ct-mail:hover {
+  border-color: var(--teal-600);
+}
+
+.ct-done {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  min-height: 380px;
+  justify-content: center;
+  animation: log-in 600ms var(--ease-out);
+}
+.ct-done-icon {
+  padding: 14px;
+  border-radius: 18px;
+  background: var(--teal-50);
+}
+.ct-done p {
+  color: var(--ink-2);
+  max-width: 40ch;
+}
+.ct-done a {
+  color: var(--teal-700);
+  border-bottom: 1px solid currentColor;
+}
+
+@media (max-width: 900px) {
+  .contact {
+    min-height: 0;
+  }
+  .ct-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  /* form comes straight after the heading; the call details follow it */
+  .ct-grid {
+    row-gap: 18px;
+  }
+  .ct-intro {
+    display: contents;
+  }
+  .ct-title {
+    margin: 0;
+  }
+  .ct-card {
+    margin-top: 8px;
+  }
+  .ct-points {
+    order: 3;
+    margin-top: 8px;
+  }
+  .ct-card {
+    order: 2;
+  }
+}
